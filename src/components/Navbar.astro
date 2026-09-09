@@ -1,0 +1,32 @@
+<header class="container nav">
+	<a href="/"><h1>BF</h1></a>
+	<ul class="nav__links">
+		<li class="nav__link"><a href="/projects">Projects</a></li>
+		<li class="nav__link"><a href="/playground">Playground</a></li>
+	</ul>
+</header>
+
+<style>
+	.nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nav__links {
+		display: flex;
+		gap: 1rem;
+
+		& .nav__link {
+			list-style: none;
+
+			& a {
+				text-decoration: none;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+</style>

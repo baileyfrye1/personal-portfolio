@@ -1,0 +1,15 @@
+:root {
+	--clr-primary-400: #4F8561;
+	--clr-primary-300: #82BA94;
+	--clr-primary-100: #D7EADC;
+	--clr-accent-300: #F28353;
+	--clr-neutral-light: #FFF4E0;
+} 
+
+.container {
+	height: 100%;
+	width: min(1280px, 100% - 3rem);
+	padding-inline: 1.5rem;
+	margin-inline: auto;
+	overflow: hidden;
+}
