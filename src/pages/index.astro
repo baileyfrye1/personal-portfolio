@@ -1,11 +1,8 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import '../styles/global.css';
 ---
 
-<!-- Hero -->
 
-<!-- About -->
 
 <!-- Small work section -->
 
@@ -13,7 +10,9 @@ import '../styles/global.css';
 
 <!-- Contact -->
 
-<SiteLayout>
+<SiteLayout title="Bailey Frye • Full Stack Developer">
+	
+	<!-- Hero -->
 	<section class="hero">
 		<div class="container">
 			<div class="hero__content">
@@ -22,37 +21,87 @@ import '../styles/global.css';
 			</div>
 		</div>
 	</section>
- <p>
-	Skills / Tools
-	HTML / CSS / JavaScript
-	React
-	PHP
-	WordPress
-	Go
-	ASP.NET
-	Python
-	REST APIs
-	WebSockets
-	Accessibility / WCAG
-	SEO / Core Web Vitals
- </p>
+
+	<!-- Skills -->
+	<section class="skills">
+		<div class="container">
+			<h2 class="skill__title">Skills & Tools</h2>
+			<div class="skill__grid">
+				<div class="skill-card">
+					<p>HTML / CSS / JavaScript</p>
+				</div>
+				<div class="skill-card">
+					<p>React</p>
+				</div>
+				<div class="skill-card">
+					<p>PHP</p>
+				</div>
+				<div class="skill-card">
+					<p>WordPress</p>
+				</div>
+				<div class="skill-card">
+					<p>Go</p>
+				</div>
+				<div class="skill-card">
+					<p>ASP.NET</p>
+				</div>
+				<div class="skill-card">
+					<p>Python</p>
+				</div>
+				<div class="skill-card">
+					<p>REST APIs</p>
+				</div>
+				<div class="skill-card">
+					<p>WebSockets</p>
+				</div>
+				<div class="skill-card">
+					<p>Accessibility / WCAG</p>
+				</div>
+				<div class="skill-card">
+					<p>SEO / Core Web Vitals</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- About -->
  <section class="about">
-	<p>I'm Bailey, a full-stack web developer and designer based in Nashville, TN. I pride myself on building clean, reliable digital platforms, from responsive frontends to the systems and databases running underneath them.
-	My path here wasn't the usual one. I spent years in real estate before moving into development, and if there's one thing both jobs taught me, it's that no matter what you're building, someone's probably going to ask if it comes with a warranty.
-	Building my own brokerage's website was the first time I really understood how much a good digital tool matters for brand success. That interest turned into a full-on career: I went back and earned my Bachelor of Science (B.S.) in Professional Studies with a concentration in Information Technology from Middle Tennessee State University, and officially made the shift into web development and design.
-	I'm passionate about making digital tools and platforms universally accessible to real people of all ages, abilities, and backgrounds, not just impressive in a demo. My litmus test is simple: if Meemaw can't use it, then I haven't done my job right.
-	Today, as a contract developer for Initium Health, I build custom WordPress themes and PHP REST APIs, handle integrations like AI-powered avatar conversations, and run accessibility and performance audits. On the side, I'm usually building something of my own, like a real-time cocktail app with a Go and ASP.NET backend, a live listings dashboard with WebSocket-powered updates, and a Python scraper that keeps rental data in sync across platforms.
-	Outside of work, you'll find me [doing ___] or at home with my fiancée and our rescue dog (and part-time detective), Arlo.
-	[Photo of Sherlock Bones]
-	</p>
+	<div class="container">
+		<div class="image-placeholder"></div>
+		<div class="about__content">
+			<h3 class="about__title">About</h3>
+			<p>I'm Bailey, a full-stack web developer and designer based in Nashville, TN. I pride myself on building clean, reliable digital platforms, from responsive frontends to the systems and databases running underneath them.
+			My path here wasn't the usual one. I spent years in real estate before moving into development, and if there's one thing both jobs taught me, it's that no matter what you're building, someone's probably going to ask if it comes with a warranty.
+			Building my own brokerage's website was the first time I really understood how much a good digital tool matters for brand success. That interest turned into a full-on career: I went back and earned my Bachelor of Science (B.S.) in Professional Studies with a concentration in Information Technology from Middle Tennessee State University, and officially made the shift into web development and design.
+			I'm passionate about making digital tools and platforms universally accessible to real people of all ages, abilities, and backgrounds, not just impressive in a demo. My litmus test is simple: if Meemaw can't use it, then I haven't done my job right.
+			Today, as a contract developer for Initium Health, I build custom WordPress themes and PHP REST APIs, handle integrations like AI-powered avatar conversations, and run accessibility and performance audits. On the side, I'm usually building something of my own, like a real-time cocktail app with a Go and ASP.NET backend, a live listings dashboard with WebSocket-powered updates, and a Python scraper that keeps rental data in sync across platforms.
+			Outside of work, you'll find me [doing ___] or at home with my fiancée and our rescue dog (and part-time detective), Arlo.
+			[Photo of Sherlock Bones]
+			</p>
+		</div>
+	</div>
  </section>
+
+ <!-- Work -->
+	<section class="work">
+		<div class="container">
+			<h4 class="work__title">My Work</h4>
+			<div class="work__items">
+				<div class="work__card"></div>
+				<div class="work__card"></div>
+				<div class="work__card"></div>
+				<div class="work__card"></div>
+				<div class="work__card"></div>
+			</div>
+		</div>
+	</section>
 </SiteLayout>
 
 <style>
 	.hero {
 		background-color: var(--clr-primary-400);
 		color: var(--clr-neutral-light);
-		padding-block: 8rem;
+		padding-block: 10rem;
 
 		& .container {
 			display: grid;
@@ -67,6 +116,74 @@ import '../styles/global.css';
 		& p {
 			font-size: 1.5rem;
 			justify-self: start;
+		}
+	}
+
+	.skills  {
+		.skill__title {
+			font-size: 2rem;
+			font-weight: bold;
+			color: var(--clr-primary-400);
+		}
+		.skill__grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			color: var(--clr-neutral-light);
+			gap: 1rem;
+		}
+
+		.skill-card {
+			background: var(--clr-neutral-dark);
+			padding: 1rem;
+			border-radius: 8px;
+		}
+	}
+
+	.about {
+
+		.container {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.image-placeholder {
+			height: 300px;
+			width: 300px;
+			background-color: var(--clr-primary-400);
+			flex: 1;
+		}
+
+		.about__content {
+
+			.about__title {
+				font-size: 3rem;
+				font-weight: bold;
+				color: var(--clr-primary-400);
+			}
+
+			flex: 1;
+		}
+	}
+
+	.work {
+		.work__title {
+			font-size: 3rem;
+			font-weight: bold;
+			color: var(--clr-primary-400);
+		}
+
+		.work__items {
+			display: flex;
+			gap: 1rem;
+
+			.work__item {
+				height: 200px;
+				background-color: gray;
+			}
+
+			.work__item:first-child {
+				flex: 2;
+			}
 		}
 	}
 </style>
