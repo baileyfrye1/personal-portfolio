@@ -1,7 +1,89 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+import { getTechnologyLogo } from "../../utils/getTechnologyLogo";
+import {projects} from "../../utils/projects.ts";
 ---
 
 <SiteLayout title="Projects • Bailey Frye Developer">
-	<h1>Projects</h1>
+	<div class="project-grid container">
+		{projects.map((project) => {
+			const projectLogos = getTechnologyLogo(project.technologies);
+			return (
+				<a href={project.link}>
+					<div class="project-img-container">
+						<img src={project.image} />
+						<span>{project.type}</span>
+					</div>
+					<div class="project-info">
+						<p class="project-name">{project.name}</p>
+						<div class="project-techs">{projectLogos.map((logo) => (
+							<img src={logo.src} />
+						))}</div>
+						<span class="tech-tooltip">Test</span>
+					</div>
+				</a>	
+			)
+		})}
+	</div>
 </SiteLayout>
+
+<style>
+	.project-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		place-items: center;
+		margin-block: 6rem;
+
+		.project-img-container {
+			position: relative;
+
+			& > img {
+				border-radius: 20px;
+				box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+			}
+
+			& > span {
+				background: var(--clr-primary-400);
+				padding: 0.25rem 0.5rem;
+				border-radius: 10000px;
+				position: absolute;
+				top: 0.5rem;
+				right: 0.5rem;
+				color: var(--clr-neutral-light);
+			}
+		}
+
+		.project-info {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 0.5rem;
+			position: relative;
+
+			.project-name {
+				font-weight: bold;
+			}
+
+			.project-techs {
+				display: flex;
+				gap: 0.5rem;
+				
+				& > img {
+					width: 30px;
+					height: 30px;
+				}
+			}
+
+			.tech-tooltip {
+				position: absolute;
+				top: 0;
+				right: 0;
+				transform: translateY(-100%);
+				background: black;
+				border-radius: 10px;
+				color: white;
+				padding: 0.25rem 0.5rem;
+			}
+		}
+	}
+</style>
