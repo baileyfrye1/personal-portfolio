@@ -14,7 +14,6 @@ html,
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
-  font-family: "Roboto";
   font-feature-settings: --theme(
     --default-font-feature-settings,
     normal
@@ -46,6 +45,17 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+  font-family: var(--font-poppins);
+}
+
+a,
+p,
+span,
+button,
+li {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: var(--font-inter);
 }
 
 a {
